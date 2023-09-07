@@ -16,4 +16,8 @@ func main() {
 	c := a + b
 
 	fmt.Println(c)
+
+	e := a == b 
+	
+	fmt.Println(e)
 }
