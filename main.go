@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	/*
 	myName  := "Uzzal Roy"
 	amount := 2
 	totalAmount := float32(amount)
@@ -26,4 +27,25 @@ func main() {
 	fmt.Println(a%b)
 
 	fmt.Println(float32(a) / float32(b))
+	*/
+	const a = 45
+	var b float32 = 45
+	var f32 float32 = b 
+	var f64 float64 = float64(f32)
+
+	fmt.Println(f32, f64)
+
+	const c = iota 
+	fmt.Println(c)
+
+	const (
+		d = 2 * 5
+		e // = 2 * 5
+		f = iota
+		g
+		h = 10 * iota
+	)
+
+	fmt.Println(d, e, f, g, h)
+
 }
