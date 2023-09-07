@@ -20,4 +20,10 @@ func main() {
 	e := a == b 
 	
 	fmt.Println(e)
+	fmt.Println(a-b)
+	fmt.Println(a*b)
+	fmt.Println(a/b)
+	fmt.Println(a%b)
+
+	fmt.Println(float32(a) / float32(b))
 }
