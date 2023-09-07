@@ -11,4 +11,9 @@ func main() {
 
 	fmt.Println(myName)
 	fmt.Println(totalAmount)
+
+	a, b := 10, 8
+	c := a + b
+
+	fmt.Println(c)
 }
