@@ -49,8 +49,16 @@ func main() {
 	fmt.Println(d, e, f, g, h)
 	*/
 
-	a := 42
-	b := &a
-	fmt.Println(&a)
-	fmt.Println(b)
+	s := "Hello, world!"
+
+	p := &s
+	fmt.Println(p)
+	fmt.Println(*p)
+
+	*p = "hello ,gopheres!"
+	fmt.Println(s)
+
+	p = new(string)
+
+	fmt.Println(p, *p)
 }
