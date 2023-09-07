@@ -27,7 +27,7 @@ func main() {
 	fmt.Println(a%b)
 
 	fmt.Println(float32(a) / float32(b))
-	*/
+	
 	const a = 45
 	var b float32 = 45
 	var f32 float32 = b 
@@ -47,5 +47,10 @@ func main() {
 	)
 
 	fmt.Println(d, e, f, g, h)
+	*/
 
+	a := 42
+	b := &a
+	fmt.Println(&a)
+	fmt.Println(b)
 }
