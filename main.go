@@ -1,18 +1,17 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
+	"io"
+	"net/http"
 	"os"
-	"strings"
 )
 
 func main() {
-	fmt.Println("What would you like me to scream?")
-	in := bufio.NewReader(os.Stdin)
-	s, _ := in.ReadString('\n')
-	s = strings.TrimSpace(s)
-	s = strings.ToUpper(s)
+	http.HandleFunc("/", Handler);
+	http.ListenAndServe(":3000", nil)
+}
 
-	fmt.Println(s + "!")
+func Handler(w http.ResponseWriter, r *http.Request) {
+	f, _ := os.Open("./menu.txt");
+	io.Copy(w, f)
 }
