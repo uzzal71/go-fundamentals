@@ -1,36 +1,29 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-	var menu map[string][]string
-	fmt.Println(menu)
+	fmt.Println("Please select a option")
+	fmt.Println("1) Print menu")
+	in := bufio.NewReader(os.Stdin)
+	choice, _ := in.ReadString('\n')
+	choice = strings.TrimSpace(choice) // we don't know what to do with this yet!
 
-	menu = map[string][]string{
-		"coffee": {"Coffee", "Espresso", "Cappccion"},
-		"tea": {"Hot Tea", "Chai Tea", "Chai Latte"},
+	type menuItem struct {
+		name string
+		prices map[string]float64
+	}
+
+	menu := []menuItem{
+		{name: "Coffee", prices: map[string]float64{"small": 1.54, "medium": 1.74, "large": 1.98}},
+		{name: "Espresso", prices: map[string]float64{"small": 1.25, "medium": 2.74, "tiple": 1.51}},
+		{name: "Chappission", prices: map[string]float64{"small": 2.54, "medium": 3.74, "large": 1.98}},
 	}
 
 	fmt.Println(menu)
-
-	fmt.Println(menu["coffee"])
-
-	menu["other"] = []string{"Hot Chocolate"}
-	fmt.Println(menu)
-
-	delete(menu, "tea")
-	fmt.Println(menu)
-
-	fmt.Println(menu["tea"])
-	v, ok := menu["tea"]
-	fmt.Println(v, ok)
-
-	menu2 := menu
-	menu2["coffee"] = []string{"Coffee"}
-	menu["tea"] = []string{"Hot Tea"}
-
-	fmt.Println(menu)
-	fmt.Println(menu2)
 }
