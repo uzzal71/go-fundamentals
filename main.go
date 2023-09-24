@@ -2,22 +2,26 @@ package main
 
 import (
 	"fmt"
+
 	"golang.org/x/exp/slices"
 )
 
 func main() {
-	var s []int 
+	var s []string
 	fmt.Println(s)
 
-	s = []int{1, 2, 3}
+	s = []string{"Coffee", "Espresso", "Cappuccino"}
 	fmt.Println(s)
 
-	s[1] = 99
+	fmt.Println(s[1])
+	s[1] = "Chai Tea"
+	fmt.Println(s)
+	s = append(s, "Hot Chocolate", "Hot Tea")
 	fmt.Println(s)
 
-	s = append(s, 5, 14, 25)
-	fmt.Println(s)
+	slices.Delete(s, 1, 2)
 
-	s = slices.Delete(s, 1, 3)
-	fmt.Println(s)
+	s2 := s
+	s2[2] = "Chai Latte"
+	fmt.Println(s, s2)
 }
