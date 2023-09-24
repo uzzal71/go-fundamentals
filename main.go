@@ -1,22 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"golang.org/x/exp/slices"
+)
 
 func main() {
-	var arr [3]string
-	fmt.Println(arr)
+	var s []int 
+	fmt.Println(s)
 
-	arr = [3]string{"Coffee", "Espresso", "Cappuccino"}
-	fmt.Println(arr)
+	s = []int{1, 2, 3}
+	fmt.Println(s)
 
-	fmt.Println(arr[1])
-	arr[1] = "Chai Tea"
+	s[1] = 99
+	fmt.Println(s)
 
-	fmt.Println(arr)
+	s = append(s, 5, 14, 25)
+	fmt.Println(s)
 
-	arr2 := arr
-
-	arr2[2] = "Chai Latte"
-
-	fmt.Println(arr, arr2)
+	s = slices.Delete(s, 1, 3)
+	fmt.Println(s)
 }
