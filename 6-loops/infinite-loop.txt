@@ -1,0 +1,6 @@
+// Infinite Loops
+i := 1
+for {
+    fmt.Println(i)
+    i += 1
+}
