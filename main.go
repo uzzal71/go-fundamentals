@@ -1,11 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	arr := [3]int{101, 102, 103}
-	for _, value := range arr {
-		fmt.Println(value)
+	fmt.Println("Please select a option")
+	fmt.Println("1) Print menu")
+	in := bufio.NewReader(os.Stdin)
+	choice, _ := in.ReadString('\n')
+	choice = strings.TrimSpace(choice) // we don't know what to do with this yet!
+
+	type menuItem struct {
+		name string
+		prices map[string]float64
 	}
-	fmt.Println("Done!")
+
+	menu := []menuItem{
+		{name: "Coffee", prices: map[string]float64{"small": 1.54, "medium": 1.74, "large": 1.98}},
+		{name: "Espresso", prices: map[string]float64{"small": 1.25, "medium": 2.74, "tiple": 1.51}},
+		{name: "Chappission", prices: map[string]float64{"small": 2.54, "medium": 3.74, "large": 1.98}},
+	}
+
+	fmt.Println(menu)
 }
