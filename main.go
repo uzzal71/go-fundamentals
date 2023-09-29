@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	for { ... }
+	// for { ... } infinite loop
+	// for condition { ... } loop till condition
+	// for initializer; test; post clause { ... } counter-base loop
 }
