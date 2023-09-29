@@ -7,9 +7,19 @@ func main() {
 	// for condition { ... } loop till condition
 	// for initializer; test; post clause { ... } counter-base loop
 	// Infinite Loops
+	/*
 	i := 1
 	for {
 		fmt.Println(i)
 		i += 1
 	}
+	*/
+
+	// Loop till condition
+	i := 1
+	for i < 3 {
+		fmt.Println(i)
+		i += 1
+	}
+	fmt.Println("Done!")
 }
