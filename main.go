@@ -16,10 +16,18 @@ func main() {
 	*/
 
 	// Loop till condition
+	/*
 	i := 1
 	for i < 3 {
 		fmt.Println(i)
 		i += 1
+	}
+	fmt.Println("Done!")
+	*/
+
+	// Counter-based Loops
+	for i:=1; i < 3; i++ {
+		fmt.Println(i)
 	}
 	fmt.Println("Done!")
 }
