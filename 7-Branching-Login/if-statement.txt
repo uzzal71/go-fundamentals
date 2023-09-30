@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	// i := 15
-	if i := 15; i < 5 {
+	if i := 15; i < 5 { // initializer
 		fmt.Println("i is less than 5")
 	} else if i < 10 {
 		fmt.Println("i less than 10")
