@@ -20,6 +20,7 @@ menu := []menuItem{
 in := bufio.NewReader(os.Stdin)
 
 func main() {
+	
 	loop:
 	for {
 		fmt.Println("Please select a option")
