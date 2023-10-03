@@ -1,0 +1,6 @@
+// method
+type myInt int  // Need a type to bind method to.
+                // DOESN'T HAVE TO BE A STRUCT
+func (i myInt) isEven() bool { // method receiver
+	return int(i) % 2 == 0
+}
