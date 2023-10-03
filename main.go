@@ -8,27 +8,26 @@ import (
 )
 
 type menuItem struct {
-	name string
+	name   string
 	prices map[string]float64
 }
 
-menu := []menuItem{
+var menu = []menuItem{
 	{name: "Coffee", prices: map[string]float64{"small": 1.54, "medium": 1.74, "large": 1.98}},
-	{name: "Espresso", prices: map[string]float64{"small": 1.25, "medium": 2.74, "tiple": 1.51}},
+	{name: "Espresso", prices: map[string]float64{"small": 1.25, "medium": 2.74, "triple": 1.51}},
 }
 
-in := bufio.NewReader(os.Stdin)
+var in = bufio.NewReader(os.Stdin)
 
 func main() {
-	
-	loop:
+loop:
 	for {
-		fmt.Println("Please select a option")
+		fmt.Println("Please select an option:")
 		fmt.Println("1) Print menu")
 		fmt.Println("2) Add item")
-		fmt.Println("q) quit")
+		fmt.Println("q) Quit")
 		choice, _ := in.ReadString('\n')
-		
+
 		switch strings.TrimSpace(choice) {
 		case "1":
 			printMenu()
@@ -43,15 +42,16 @@ func main() {
 }
 
 func addItem() {
-	fmt.Println("Please enter the name of the new item")
+	fmt.Println("Please enter the name of the new item:")
 	name, _ := in.ReadString('\n')
-	menu = append(menu, menuItem{name:name, prices: map[string]float64{}})
+	name = strings.TrimSpace(name)
+	menu = append(menu, menuItem{name: name, prices: map[string]float64{}})
 }
 
 func printMenu() {
 	for _, item := range menu {
 		fmt.Println(item.name)
-		fmt.Println(strings.Repeat("-", 10))
+		fmt.Println(strings.Repeat("-", len(item.name)))
 		for size, price := range item.prices {
 			fmt.Printf("\t%8s%10.2f\n", size, price)
 		}
