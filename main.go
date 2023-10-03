@@ -31,21 +31,29 @@ func main() {
 		
 		switch strings.TrimSpace(choice) {
 		case "1":
-			for _, item := range menu {
-				fmt.Println(item.name)
-				fmt.Println(strings.Repeat("-", 10))
-				for size, price := range item.prices {
-					fmt.Printf("\t%8s%10.2f\n", size, price)
-				}
-			}
+			printMenu()
 		case "2":
-			fmt.Println("Please enter the name of the new item")
-			name, _ := in.ReadString('\n')
-			menu = append(menu, menuItem{name:name, prices: map[string]float64{}})
+			addItem()
 		case "q":
 			break loop
 		default:
 			fmt.Println("Unknown option")
+		}
+	}
+}
+
+func addItem() {
+	fmt.Println("Please enter the name of the new item")
+	name, _ := in.ReadString('\n')
+	menu = append(menu, menuItem{name:name, prices: map[string]float64{}})
+}
+
+func printMenu() {
+	for _, item := range menu {
+		fmt.Println(item.name)
+		fmt.Println(strings.Repeat("-", 10))
+		for size, price := range item.prices {
+			fmt.Printf("\t%8s%10.2f\n", size, price)
 		}
 	}
 }
