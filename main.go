@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"demo/menu"
 )
 
 
@@ -21,9 +23,9 @@ loop:
 
 		switch strings.TrimSpace(choice) {
 		case "1":
-			printMenu()
+			menu.PrintMenu()
 		case "2":
-			addItem()
+			menu.AddItem()
 		case "q":
 			break loop
 		default:
