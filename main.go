@@ -12,3 +12,7 @@ type user struct {
 func (u user) String() string {							// value receiver
 	return fmt.Printf("%v (%v)\n", u.username, u.id)
 }
+
+func (u *user) UpdateName(n name) {
+	u.username = name
+}
