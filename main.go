@@ -8,3 +8,7 @@ type user struct {
 	id 			int
 	username	string
 }
+
+func (u user) String() string {							// value receiver
+	return fmt.Printf("%v (%v)\n", u.username, u.id)
+}
