@@ -18,11 +18,11 @@ func AddItem() {
 	fmt.Println("Please enter the name of the new item:")
 	name, _ := in.ReadString('\n')
 	name = strings.TrimSpace(name)
-	menu = append(menu, menuItem{name: name, prices: map[string]float64{}})
+	data = append(data, menuItem{name: name, prices: map[string]float64{}})
 }
 
 func PrintMenu() {
-	for _, item := range menu {
+	for _, item := range data {
 		fmt.Println(item.name)
 		fmt.Println(strings.Repeat("-", len(item.name)))
 		for size, price := range item.prices {

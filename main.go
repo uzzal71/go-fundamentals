@@ -1,18 +1,35 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+
+	"demo/menu"
+)
+
+
+var in = bufio.NewReader(os.Stdin)
+
 func main() {
-	
-}
+loop:
+	for {
+		fmt.Println("Please select an option:")
+		fmt.Println("1) Print menu")
+		fmt.Println("2) Add item")
+		fmt.Println("q) Quit")
+		choice, _ := in.ReadString('\n')
 
-type user struct {
-	id 			int
-	username	string
-}
-
-func (u user) String() string {							// value receiver
-	return fmt.Printf("%v (%v)\n", u.username, u.id)
-}
-
-func (u *user) UpdateName(n name) {
-	u.username = name
+		switch strings.TrimSpace(choice) {
+		case "1":
+			menu.PrintMenu()
+		case "2":
+			menu.AddItem()
+		case "q":
+			break loop
+		default:
+			fmt.Println("Unknown option")
+		}
+	}
 }
