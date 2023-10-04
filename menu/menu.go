@@ -24,13 +24,17 @@ func (m menu) print() {
 	}
 }
 
-var in = bufio.NewReader(os.Stdin)
-
-func AddItem() {
+func (m *menu) add() {
 	fmt.Println("Please enter the name of the new item:")
 	name, _ := in.ReadString('\n')
 	name = strings.TrimSpace(name)
-	data = append(data, menuItem{name: name, prices: map[string]float64{}})
+	data = append(*m, menuItem{name: name, prices: map[string]float64{}})
+}
+
+var in = bufio.NewReader(os.Stdin)
+
+func AddItem() {
+	data.add()
 }
 
 func PrintMenu() {
