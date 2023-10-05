@@ -17,6 +17,10 @@ func(u user) Print() string {
 	return fmt.Printf("%v [%v]\n", u.username, u.id)
 }
 
+type menuItem(m menuItem) Print() string {
+	
+}
+
 func main() {
 
 }
