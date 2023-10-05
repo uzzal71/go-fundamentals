@@ -41,4 +41,10 @@ func main() {
 
 	p = menuItem{name: "Coffee", prices: map[string]float64{"small": 1.54, "medium": 1.74, "large": 1.98}}
 	fmt.Println(p.Print())
+
+	u, ok := p.(user)
+	fmt.Println(u, ok)
+
+	mi, ok := p.(menuItem)
+	fmt.Println(mi, ok)
 }
