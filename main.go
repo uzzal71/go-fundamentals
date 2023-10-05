@@ -38,4 +38,7 @@ func main() {
 	var p printer
 	p = user{username: "uzzal", id: 42}
 	fmt.Println(p.Print())
+
+	p = menuItem{name: "Coffee", prices: map[string]float64{"small": 1.54, "medium": 1.74, "large": 1.98}}
+	fmt.Println(p.Print())
 }
