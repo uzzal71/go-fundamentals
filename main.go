@@ -47,4 +47,13 @@ func main() {
 
 	mi, ok := p.(menuItem)
 	fmt.Println(mi, ok)
+
+	switch v := p.(type){
+	case user:
+		fmt.Println("Found a user!", v)
+	case menuItem:
+		fmt.Println("Found a menuItem!", v)
+	default:
+		fmt.Println("I'm not sure what this is...")
+	}
 }
