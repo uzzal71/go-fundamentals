@@ -9,6 +9,10 @@ type user struct {
 	id int
 }
 
+func(u user) Print() string {
+	
+}
+
 func main() {
 
 }
